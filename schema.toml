@@ -1,0 +1,6 @@
+[car]
+description = "A motor vehicle to be shared"
+
+[car.fields]
+name = { type = "str" }
+registration = { type = "str" }

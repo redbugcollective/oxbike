@@ -1,0 +1,19 @@
+{
+  "name": "oxbike",
+  "version": "0.1.0",
+  "description": "Transport for a shared local future. A vehicle sharing app built with P2Panda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadehopepunk/oxbike.git"
+  },
+  "author": "Jade",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jadehopepunk/oxbike/issues"
+  },
+  "homepage": "https://github.com/jadehopepunk/oxbike#readme"
+}

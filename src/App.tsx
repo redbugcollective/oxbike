@@ -1,14 +1,13 @@
-import './App.css'
-import { ColorModeSwitcher } from "./ColorModeSwitcher.tsx"
-import { Box, Container } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 import Car from "./Car.tsx"
+import Navbar from './Navbar.tsx'
 
 function App() {
   return (
-    <Container>
-      <ColorModeSwitcher justifySelf="flex-end" />
+    <Box>
+      <Navbar />
       <Car />
-    </Container>
+    </Box>
   )
 }
 

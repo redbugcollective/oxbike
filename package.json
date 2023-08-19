@@ -8,8 +8,8 @@
     "build": "tsc && vite build && npm run dockerbuild",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "dockerbuild": "docker build -t oxbike-server .",
-    "dockerrun": "docker run -it --rm -d -p 8080:80 --name oxbike oxbike-server"
+    "dockerbuild": "docker build -t oxbike . && mkdir -p ./deploy/tmp && docker save oxbike > ./deploy/tmp/oxbike.tar",
+    "dockerrun": "docker run -it --rm -d -p 8080:80 --name oxbike oxbike"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.0",
@@ -24,7 +24,8 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
+    "@types/react-dom":
+    "@emotion/styled": "^11.11.0","^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",

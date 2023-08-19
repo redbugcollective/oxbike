@@ -1,20 +1,22 @@
 "use client"
 
 import { Box, Image } from "@chakra-ui/react"
-import carImage from "./assets/LightningMcQueen.webp"
 
-export default function Car() {
-  const property = {
-    imageUrl: carImage,
-    imageAlt:
-      "A picture of Lightning McQueen used as a placeholder for the car",
-    make: "Nissan",
-    model: "xTrail",
-  }
+interface ImageProps {
+  url: string
+  alt: string
+}
 
+interface CarProps {
+  image: ImageProps
+  make: string
+  model: string
+}
+
+export default function Car(props: CarProps) {
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={property.imageUrl} alt={property.imageAlt} />
+      <Image src={props.image.url} alt={props.image.alt} />
 
       <Box p="6">
         <Box
@@ -24,7 +26,7 @@ export default function Car() {
           lineHeight="tight"
           noOfLines={1}
         >
-          {property.make} {property.model}
+          {props.make} {props.model}
         </Box>
       </Box>
     </Box>

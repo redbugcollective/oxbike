@@ -8,7 +8,8 @@
     "push": "tsc && vite build && npm run dockerpush",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "dockerpush": "docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t redbugcollective/oxbike:latest --push .",    "ci": "npm run build && npm run deploy && npm run remoterun"
+    "dockerpush": "docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t redbugcollective/oxbike:latest --push .",
+    "ci": "npm run build && npm run deploy && npm run remoterun"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.0",
@@ -16,6 +17,8 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "framer-motion": "^10.15.2",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",

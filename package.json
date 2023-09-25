@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "dockerbuild": "docker buildx build --platform linux/arm/v8 -t oxbike . && docker save --output ./tmp/oxbike.tar oxbike",
     "dockerrun": "docker run -it --rm -d -p 8080:80 --name oxbike oxbike",
-    "deploy": "rsync -aP ./tmp/oxbike.tar pi@$SERVER:~/deploys/ && ssh pi@$SERVER 'docker load -i ~/deploys/oxbike.tar'"
+    "deploy": "rsync -aP ./tmp/oxbike.tar pi@$PANGA_SERVER:~/deploys/ && ssh pi@$PANGA_SERVER 'docker load -i ~/deploys/oxbike.tar'",
+    "remoterun": "ssh pi@$PANGA_SERVER 'docker stop oxbike || true && docker run -it -d --restart unless-stopped -p 80:80 --name oxbike oxbike'",
+    "ci": "npm run build && npm run deploy && npm run remoterun"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.0",

@@ -1,0 +1,27 @@
+[resource]
+description = "A bookable resource"
+
+[resource.fields]
+name = { type = "str" }
+type_name = { type = "str" }
+type_schema = { type = "str" }
+
+[car_resource]
+description = "Car specific data for a resource"
+
+[car_resource.fields]
+resource = { type = "relation", schema = { name = "resource" } }
+registration_number = { type = "str"}
+
+[booking]
+description = "An instance of booking a resource"
+
+[booking.fields]
+resource = { type = "relation", schema = { name = "resource" } }
+booker = { type = "relation", schema = { name = "resource" } }
+
+[booker]
+description = "An entity which can book a resource"
+
+[booker.fields]
+name = { type = "str" }

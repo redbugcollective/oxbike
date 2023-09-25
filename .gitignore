@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 tmp
+schemas/secret.txt
 
 # Editor directories and files
 .vscode/*
